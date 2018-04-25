@@ -130,10 +130,12 @@ def get_grades_by_github(github):
 
     rows = db_cursor.fetchall()
 
+
     for row in rows:
         print "Student {acct} received grade of {grade} for {title}".format(
             acct=github, grade=row[1], title=row[0])
 
+       
     return rows
 
 
@@ -203,7 +205,7 @@ def handle_input():
 if __name__ == "__main__":
     connect_to_db(app)
 
-    handle_input()
+    # handle_input()
 
     # To be tidy, we'll close our database connection -- though, since this
     # is where our program ends, we'd quit anyway.
