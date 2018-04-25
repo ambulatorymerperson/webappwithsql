@@ -51,14 +51,19 @@ def student_add():
 
 	hackbright.make_new_student(first_name, last_name, github_username)
 
-	# flash("successfully added!")
-
-	# return render_template("add_student.html",
-	# 							first_name=first_name,
-	# 						last_name=last_name,
-	# 						github_username=github_username)
 
 	return redirect("/add_student_form")
+
+
+@app.route("/project")
+def project_info_for_student():
+
+  project = hackbright.get_project_by_title(title)
+  
+
+
+
+
 
 if __name__ == "__main__":
     hackbright.connect_to_db(app)
